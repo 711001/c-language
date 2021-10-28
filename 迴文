@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    int i,flag;
+    char s[1000];
+    while(scanf("%s",s)!=EOF){
+        flag=0;
+        for (i=0;i<strlen(s)/2;i++){
+            if(s[i]!=s[strlen(s)-1-i]){
+                flag=1;
+                break;
+            }
+        }
+        if (flag==1){
+            printf("no\n");
+        
+        }
+        else{
+            printf("yes\n");
+        }
+    }
+    
+
+    return 0;
+    
+}
+    
+    
+    //https://zerojudge.tw/ShowProblem?problemid=a022
