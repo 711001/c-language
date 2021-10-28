@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main()
+{
+    int x,y,z,count;
+    count =0;
+    for(x=0;x<=10;x++){
+        y=20-2*x;
+        z = 30 - x - y;
+        if(3*x+2*y+z == 50){
+            count++;
+        }
+    }
+    printf("%d",count);
+
+
+
+    return 0;
+}
+
+//  http://c.biancheng.net/cpp/html/3322.html
