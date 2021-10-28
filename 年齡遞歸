@@ -1,0 +1,20 @@
+#include <stdio.h>
+int age(int n){
+    int x;
+    if (n==1){
+        x=10;
+    }
+    else {
+        x=age(n-1)+2;
+    }
+    return x;
+}
+
+int main(){
+    int n;
+    scanf("%d",&n);
+    printf("第%d個人的年齡:%d",n,age(n));
+    return 0;
+}
+
+//   http://c.biancheng.net/cpp/html/3377.html
