@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main()
+{
+    int c;
+    for(c=32;c<127;c++){
+        printf("\t%c  %4d\n",c,c);
+    }
+    return 0;
+}
+
+//  http://c.biancheng.net/cpp/html/2554.html
