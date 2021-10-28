@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main()
+{
+    int i,n;
+    int array[50];
+    while(scanf("%d",&n)!=EOF){
+        i=0;
+        while (n){
+            array[i]=n%2;
+            n/=2;
+            i++;
+        }
+        for(i=i-1;i>=0;i--){
+            printf("%d",array[i]);
+        }
+        printf("\n");
+        
+    }
+    
+
+    return 0;
+    
+}
+    //   https://zerojudge.tw/ShowProblem?problemid=a034
