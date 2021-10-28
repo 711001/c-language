@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main()
+{
+    int t,a[5];
+    long k,i;
+    for (i=95860; ;i++){
+        for(t=0,k=100000;k>=10;t++){
+            a[t]=(i%k)/(k/10);
+            k/=10;
+        }
+        if (a[0]==a[4]&&a[1]==a[3]){
+            printf("%d%d%d%d%d",a[0],a[1],a[2],a[3],a[4]);
+            break;
+
+        }
+    }
+
+
+    return 0;
+}
+
+// http://c.biancheng.net/cpp/html/3318.html
