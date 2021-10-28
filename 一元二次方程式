@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+int main(){
+    int a,b,c,d,x,y;
+    scanf("%d%d%d",&a,&b,&c);
+    d=b*b-4*a*c;
+    x=(-b+sqrt(d))/(2*a);
+    y=(-b-sqrt(d))/(2*a);
+    if(d>0){
+        printf("root are %d and %d",x,y);
+    }
+    else if(d==0&&x==y){
+        printf("root is %d  ",y);
+    }
+    else{
+        printf("No real root");
+    }
+   
+    return 0;
+}
+
+//  https://zerojudge.tw/ShowProblem?problemid=a006
