@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main()
+{
+    int i,x,y,last=1;
+    scanf("%d%d",&x,&y);
+    for (i=1;i<=y;i++){
+        last=last*x%1000;
+    }
+    printf("%d",last);
+    return 0;
+}
+
+//   http://c.biancheng.net/cpp/html/3330.html
