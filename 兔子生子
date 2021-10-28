@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main(){
+    long a,b,c;
+    a=1;b=1;
+    printf("%12ld\n%12ld\n",a,b);
+    for (int n=3;n<=30;n++){
+        c=a+b;
+        printf("%12ld\n",c);
+        a=b;
+        b=c;
+        
+        
+    }
+    return 0;
+}
