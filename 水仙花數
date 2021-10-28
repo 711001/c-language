@@ -12,3 +12,5 @@ int main(){
     }
     return 0;
 }
+
+//   http://c.biancheng.net/cpp/html/3327.html
