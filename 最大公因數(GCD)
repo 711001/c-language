@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main()
+{
+    int n,m,temp;
+    while(scanf("%d%d",&n,&m)!=EOF){
+        while(n%m!=0){
+            temp=n%m;
+            n=m;
+            m=temp;
+        }
+        printf("%d\n",m);
+    }
+    
+
+    return 0;
+    
+}
+
+//   https://zerojudge.tw/ShowProblem?problemid=a024
