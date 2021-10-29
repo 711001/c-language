@@ -1,0 +1,22 @@
+#include <stdio.h>
+#define True 1
+#define False 0
+#define SQ(x) x*x
+int main(void){
+    int num,again=1;
+    while(again){
+        scanf("%d",&num);
+        printf("%d\n",SQ(num));
+        if(num>=50){
+            again =False;
+        }
+        else{
+            again=True;
+        }
+    }
+
+    return 0;
+}
+
+
+//   https://www.runoob.com/cprogramming/c-exercise-example46.html
