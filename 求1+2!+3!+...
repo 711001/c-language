@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main()
+{
+    long double sum=0,mix=1;
+    for(int i =1;i<=20;i++){
+        mix=mix*i;
+        sum=sum+mix;
+    }
+    printf("%Lf",sum);
+    return 0;
+}
+
+//  https://www.runoob.com/cprogramming/c-exercise-example25.html
