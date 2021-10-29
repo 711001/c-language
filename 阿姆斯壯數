@@ -1,0 +1,48 @@
+#include<stdio.h>
+#include<math.h>
+int armstrong(int number);
+int countdigit(int a);
+int main(){
+    int  n,m,i,count;
+    while (scanf("%d%d",&n,&m)!=EOF){
+        count=0;
+        for(i=n;i<=m;i++){
+            if (armstrong(i)){
+                printf("%d ",i);
+                count++;
+            }
+
+        }
+        if(count==0){
+            printf("none\n");
+        }
+    }
+    return 0;
+}
+int countdigit(int a){
+    int count=0;
+    while(a){
+        count++;
+        a/=10;
+    }
+    return count;
+}
+int armstrong(int number){
+    int sum=0,flag=0,t,copy;
+    t=countdigit(number);
+    copy=number;
+    while(number){
+        sum+=pow(number%10,t);
+        number/=10;
+
+    }
+    if (sum==copy){
+        flag=1;
+    }
+    return flag;
+}
+
+
+
+
+//    https://zerojudge.tw/ShowProblem?problemid=a040
