@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main()
+{
+    float h,sum;
+    h=sum=100;
+    h/=2;
+    for (int i=2;i<=10;i++){
+        sum+=h*2;
+        h/=2;
+    }
+    printf("%f",sum);
+
+    return 0;
+}
+
+//   https://www.runoob.com/cprogramming/c-exercise-example20.html
