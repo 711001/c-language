@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main()
+{
+    float sum=0,a=2,b=1;
+    int t;
+    for (int i=1;i<=20;i++){
+        sum+=a/b;
+        t=a+b;
+        b=a;
+        a=t;
+    }
+    printf("%9.6f",sum);
+    return 0;
+}
+
+//    https://www.runoob.com/cprogramming/c-exercise-example24.html
