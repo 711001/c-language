@@ -1,0 +1,64 @@
+#include<stdio.h>
+ 
+int main()
+
+{
+
+int i,j,sum=0, t, n;
+
+int a[1000]; //預先假設陣列a[i]有1000個元素
+
+
+ 
+printf("輸入n的值為:\n");
+
+scanf("%d", &n);
+
+printf("輸入n個數\n");
+
+for (i = 0; i < n; i++)
+
+{
+
+scanf("%d",&a[i]); //輸入n個元素
+
+sum = sum + a[i]; //對a[i]裡的元素進行累加
+
+}
+
+for (i = 0; i < n-1;i++)
+
+for (j = i + 1; j < n;j++)
+
+if (a[i] > a[j]) //此處用選擇法排序，為升序，若改為"a[i]<a[j]"即為降序
+
+
+ 
+{
+
+t = a[i];
+
+a[i] = a[j];
+
+a[j] = t;
+
+}
+
+printf("平均值%d,最大值%d,最小值%d\n", sum /n,a[n-1], a[0]);
+
+printf("排序後的陣列:\n");
+
+for (i = 0; i < n; i++)
+
+{
+
+printf("%d ", a[i]);
+
+}
+
+return 0;
+
+}
+
+
+//   https://www.juduo.cc/club/2901561.html
