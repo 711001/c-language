@@ -1,0 +1,15 @@
+#include <stdio.h>                        
+
+int main(void)                             
+{                                           
+    int arr[] = {3, 4, 5, 6, 7};   
+    int size_t;
+
+    size_t  = sizeof(arr) / sizeof(int);  
+
+    printf("%d",size_t)  ;                    
+
+    return 0;                               
+}              
+
+//     https://opensourcedoc.com/c-programming/array/
