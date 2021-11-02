@@ -1,0 +1,41 @@
+#include<stdio.h>
+
+int main () {
+    int number,factor,times;
+    scanf("%d",&number);
+    if (number==1){
+        printf("%d",number);
+    }
+    else{
+        for (factor=2;factor<=number;factor++){
+            times=0;
+            while(number%factor==0){
+                times++;
+                number/=factor;
+            }
+            if (number==1){
+                if (times==1){
+                    printf("%d",factor);
+                }
+                else{
+                    printf("%d^%d",factor,times);
+                }
+                
+            }
+            else{
+                if (times==1){
+                    printf("%d * ",factor);
+                }
+                else if(times>1){
+                    printf("%d^%d * ",factor,times);
+                }
+            }
+        }
+        
+        
+    }
+    return 0;
+}
+
+
+//  https://zerojudge.tw/ShowProblem?problemid=a010
