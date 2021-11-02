@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+    char s[1000];
+    int i,j,k;
+    while(scanf("%s",s)!=EOF){
+        int odd=0;
+    int abc[26]={0};
+    for(j=0;j<26;j++){
+        for(i=0;i<strlen(s);i++){
+            if(s[i]==65+j||s[i]==97+j){
+                abc[j]+=1;
+            }
+        }
+    }
+    for(k=0;k<26;k++){
+        if(abc[k]%2==1){
+            odd++;
+        }
+    }
+    if(odd>=2){
+        printf("no...\n");
+    }
+    else{
+        printf("yes !\n");
+    }
+    }
+    
+    return 0;
+}
+
+//    https://zerojudge.tw/ShowProblem?problemid=a224
