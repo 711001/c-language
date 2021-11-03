@@ -1,0 +1,79 @@
+#include<math.h>
+#include <stdio.h>
+int maxof3(int a,int b,int c)
+{
+    int t;
+    if(a<b)  /*如果a<b，将变量a、b的值互换*/
+    {
+        t=a;
+        a=b;
+        b=t;
+    }
+    if(a<c)
+    {
+        t=a;
+        a=c;
+        c=t;
+    }
+    if(b<c)
+    {
+        t=b;
+        b=c;
+        c=t;
+    }
+    return(a*100+b*10+c);
+}
+/*求三位数重排后的最小数*/
+int minof3(int a, int b, int c)
+{
+    int t;
+    if(a<b)
+    {
+        t=a;
+        a=b;
+        b=t;
+    }
+    if(a<c)
+    {
+        t=a;
+        a=c;
+        c=t;
+    }
+    if(b<c)
+    {
+        t=b;
+        b=c;
+        c=t;
+    }
+    return(c*100+b*10+a);
+}
+int main()
+{
+    
+    int a,b,c,max,min ,n,j,h;
+    scanf("%d",&n);
+    a=n/100;
+    b=n%100/10;
+    c=n%10;
+    max=maxof3(a,b,c);
+    min=minof3(a,b,c);
+    j=max-min;
+    for(int k=0;;k++){
+        h=j;
+        a=j/100;
+        b=j%100/10;
+        c=j%10;
+        max=maxof3(a,b,c);
+        min=minof3(a,b,c);
+        j=max-min;
+        if(j==h){
+            printf("%d",j);
+            break;
+        }
+    }
+    
+    
+    
+    
+    return 0;
+}
