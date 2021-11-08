@@ -1,0 +1,60 @@
+#include<stdio.h>
+
+int main()
+{
+    int num, posFirst, posSecond;
+    int rem, temp, rev=0, noOfDigit=0, arr[10], i;
+    printf("Enter the Number: ");
+    scanf("%d", &num);
+    temp = num;
+    while(temp>0)
+    {
+        temp = temp/10;
+        noOfDigit++;
+    }
+    if(noOfDigit==1)
+    {
+        printf("\nIt's a single-digit number.");
+        printf("\nTo interchange the digit, enter a two or more digit number");
+        getch();
+        return 0;
+    }
+    else
+    {
+        printf("\nInterchange the Digit at Position: ");
+        scanf("%d", &posFirst);
+        printf("With Digit at Position: ");
+        scanf("%d", &posSecond);
+    }
+    if(posFirst>noOfDigit || posSecond>noOfDigit)
+        printf("\nInvalid Position!");
+    else
+    {
+        temp = num;
+        while(temp>0)
+        {
+            rem = temp%10;
+            rev = (rev*10)+rem;
+            temp = temp/10;
+        }
+        for(i=0; i<noOfDigit; i++)
+        {
+            rem = rev%10;
+            arr[i] = rem;
+            rev = rev/10;
+        }
+        i=0;
+        temp = arr[posFirst-1];
+        arr[posFirst-1] = arr[posSecond-1];
+        arr[posSecond-1] = temp;
+        printf("\nDigits Interchanged Successfully!");
+        printf("\n\nNew Number = ");
+        for(i=0; i<noOfDigit; i++)
+            printf("%d", arr[i]);
+    }
+    
+    return 0;
+}
+
+
+//     https://codescracker.com/c/program/c-program-interchange-numbers.htm
