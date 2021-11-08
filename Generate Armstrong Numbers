@@ -1,0 +1,57 @@
+#include<stdio.h>
+
+int findNoOfDigit(int);
+int pow(int, int);
+void generateArmNos(int, int);
+int main()
+{
+    int start, end;
+    printf("Enter the Interval: ");
+    scanf("%d%d", &start, &end);
+    printf("\nArmstrong Numbers between %d and %d:-\n", start, end);
+    generateArmNos(start, end);
+ 
+    return 0;
+}
+void generateArmNos(int start, int end)
+{
+    int noOfDigit, num, digToPowVal, i, rem, res=0;
+    while(start<=end)
+    {
+        noOfDigit = findNoOfDigit(start);
+        num = start;
+        while(num>0)
+        {
+            rem = num%10;
+            digToPowVal = pow(rem, noOfDigit);
+            res = res+digToPowVal;
+            num = num/10;
+        }
+        if(res==start)
+            printf(" %d\n", res);
+        start++;
+        res = 0;
+    }
+}
+int findNoOfDigit(int temp)
+{
+    int noOfDigit=0;
+    while(temp>0)
+    {
+        temp = temp/10;
+        noOfDigit++;
+    }
+    return noOfDigit;
+}
+int pow(int rem, int noOfDigit)
+{
+    int digToPowVal = 1, i=0;
+    while(i<noOfDigit)
+    {
+        digToPowVal = digToPowVal*rem;
+        i++;
+    }
+    return digToPowVal;
+}
+
+//   https://codescracker.com/c/program/c-program-generate-armstrong-number.htm
