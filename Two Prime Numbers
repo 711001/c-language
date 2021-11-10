@@ -1,0 +1,50 @@
+#include<stdio.h>
+int check(int a);
+int main()
+{
+   int n, j, flag;
+
+   printf("Enter a number: ");
+   scanf("%d",&n);
+
+   // divide number into two parts j and (n-j)
+   // such as n = j + (n-j)
+   for(j=2;j<=n/2;j++)
+   {
+       // condition for j to be a prime number
+       if(check(j)==0)
+       {
+          // condition for n-j to be a prime number
+          if(check(n-j)==0)
+          {
+             // n= j + (n-j)
+             printf(" %d + %d = %d\n", j, n-j, n);
+             flag=0;
+          }
+       }
+   }
+
+   if(flag==1)
+       printf("Can't be expressed as sum of two prime Numbers.\n");
+
+   return 0;
+}
+
+int check(int a)
+{
+   int i, flag=0;
+
+   for(i=2;i<=a/2;i++)
+   {
+       if(a%i==0)
+          flag++;
+   }
+
+   if(flag==0)
+       return 0;
+   else
+       return 1;
+}
+
+
+//   https://www.knowprogram.com/c-programming/c-program-functions-example/
