@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main()
+{
+   int n, i, j;
+
+   printf("Enter number of rows: ");
+   scanf("%d",&n);
+
+   int k = n*(n+1)/2;
+   for(i=n; i>=0; i--)
+   {
+     for(j=1; j<=i; j++)
+     printf("%-5d",k--);
+     printf("\n");
+   }
+
+   return 0;}
+   
+   
+   //https://www.knowprogram.com/c-programming/floyds-triangle-c/
