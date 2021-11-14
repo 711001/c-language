@@ -32,6 +32,6 @@ int main()
     
     
     return 0;
-}
+}//列出第一行中差值为1898的所有素数组合:
 
 //   http://c.biancheng.net/cpp/html/3344.html
