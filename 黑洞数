@@ -1,3 +1,4 @@
+//操作是将组成一个数的各位数字重排得到的最大数减去最小数直到不變極為黑洞數
 #include<math.h>
 #include <stdio.h>
 int maxof3(int a,int b,int c)
