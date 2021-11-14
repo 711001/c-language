@@ -1,3 +1,4 @@
+//  Mersenne Prime 指的是形如2n-1的正整数
 #include<math.h>
 #include <stdio.h>
 int prime(int mp){
