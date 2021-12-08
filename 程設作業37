@@ -1,0 +1,188 @@
+Odd Magic Square
+hard
+Pass rate: 97.67% (126/129)
+If/else
+Loop
+Array
+Description
+The odd magic square consists of consecutive integers (starting with 1 and ending with n²) placed intonrows by n columns.
+
+The sum of each row, each column and each diagonal are the same.
+
+Hint:
+
+Place number 1 in the middle of first row.
+
+Check if the upper right grid is empty:
+
+if empty: fill the next number in this upper right grid
+
+if not empty: fill the next number in the bottom of current grid
+
+Check if the last step exceeds the boundary, you need to return to the other side.
+
+You can see the following example to understand the process !
+
+奇數魔方陣是指在nxn的方陣中，放入從1開始到n^2的連續數字。
+
+使每一行、每一列與每條對角線的和皆相同。
+
+提示:
+
+首先在第一列的最中間那個方格填入1。
+
+接著檢查該方格的右上方是否為空的:
+
+如果是空的: 將下個數字填入右上方的方格
+
+如果不是空的: 將下個數字填入當前方格的正下面那格
+
+如果在上一步會超出邊界，則需要返回另一邊
+
+你可以看下方的範例來了解過程!
+
+For example:n = 3
+
+step1:
+
+0 1 0
+
+0 0 0
+
+0 0 0
+
+step2:
+
+0 1 0
+
+0 0 0
+
+0 0 2
+
+step3:
+
+0 1 0
+
+3 0 0
+
+0 0 2
+
+step4:
+
+0 1 0
+
+3 0 0
+
+4 0 2
+
+Finally, after 9 steps:
+
+8 1 6
+
+3 5 7
+
+4 9 2
+
+Input
+There is an odd integer between 1 and 50
+
+Output
+Output the square.
+
+There is a space after each number.
+
+Limits
+Your program needs to finish task in 5 seconds.
+
+Your program can only use memory less than 10000 KB.
+
+#include <stdio.h>
+
+int main(void){
+    return 0;
+}
+
+1
+#include<stdio.h>
+2
+​
+3
+int main()
+4
+{   int N;
+5
+    scanf("%d",&N);
+6
+    int a[50][50]={0}, i, j, k, t, x, y;
+7
+    i=0;  /*自然数1的行标*/
+8
+    j=N/2;  /*自然数1的列标*/
+9
+    t=N-1;  /*最后一行、最后一列的下标*/
+10
+    for(k=1; k<=N*N; k++)
+11
+    {
+12
+        a[i][j]=k;
+13
+        x=i;
+14
+        y=j;
+15
+        if(i == 0)
+16
+            i=t;
+17
+        else
+18
+            i=i-1;
+19
+        if(j != t)
+20
+            j=j+1;
+21
+        else
+22
+            j=0;
+23
+        if(a[i][j]!=0)
+24
+        {
+25
+            i=x+1;
+26
+            j=y;
+27
+        }
+28
+    }
+29
+    //printf("生成的5-魔方阵为：");
+30
+    for(i=0; i<N; i++)
+31
+    {
+32
+        
+33
+        for(j=0; j<N; j++)
+34
+        {
+35
+            printf("%d ", a[i][j]);
+36
+        }
+37
+        printf("\n");
+38
+    }
+39
+    
+40
+    return 0;
+41
+    
+42
+}
