@@ -1,0 +1,117 @@
+Railway Timetable
+easy
+Pass rate: 56.43% (158/280)
+Expression
+If/else
+Loop
+Format I/O
+Description
+Ariel is traveling around Taiwan by scooter. Unfortunately, her scooter broke down when she arrived in Taipei. Therefore, Ariel plans to take the train from Taipei to Tainan.
+There are n trains. Each train has different number x, departure time HH:MM (0<=HH<=23, 0<=MM<=59) and running time y minutes. Current time is hh:mm, please tell Ariel which train that she can take arrives in Tainan earliest.
+
+Note 1. Ariel only takes the train after hh:mm(including hh:mm)
+
+Note 2. Timetable is sorted from 00:00 to 23:59.
+
+Note 3. Probably train A departs earlier than train B, but train A arrives later than train B ; train A departs later than train B, but train A arrives earlier than train B. (referring to Sample 2)
+Note 4. Ariel must can take the train to Tainan.
+Note 5. Trains arrive in Tainan at different times. That means, there is only one answer.
+
+
+Ariel 以台南為起點騎車環島，騎車到了台北後，車子拋錨了，只好改搭火車回家，當天的火車時刻表上共有 n 班火車，每班火車都有不相同的編號 x，發車時間為 HH:MM (0<=HH<=23, 0<=MM<=59)，需要花費 y 分鐘才能抵達台南，此時時間為 hh:mm，請問 Ariel 應該要搭哪一班火車才能最早抵達台南?
+
+註1. Ariel 只能搭 hh:mm 以後的火車 (包含 hh:mm)
+
+註2. 火車時刻表上的發車時間是從 00:00 開始排序下來的
+
+註3. 有可能比較早發車的火車比較晚抵達台南;比較晚發車的火車比較早抵達台南 (可參考 sample 2)
+
+註4. 一定有火車可以搭回台南
+
+註5. 火車抵達台南的時間皆不同，即答案只會有一個
+
+Input
+First line, a sequence hh:mm represents current time. ( hh and mm are integers, 0<=hh<=23, 0<=mm<=59)
+
+Second line, an integer n represents the number of trains.(1<=n<=30)
+
+Then, there are n lines, an integer x , a sequence HH:MM and an integer y represent the train's number, departure time and running time, respectively. (0<=x<=9999, 0<=HH<=23, 0<=MM<=59, 60<=y<=180)
+
+Output
+Output the train's number that Ariel can arrive in Tainan earliest.
+
+Limits
+Your program needs to finish task in 1 second.
+
+Your program can only use memory less than 5000 KB.
+
+#include<stdio.h>
+
+int main () {
+    return 0;
+}
+
+1
+#include<stdio.h>
+2
+​
+3
+int main () {
+4
+    int a,b;
+5
+    scanf("%d:%d",&a,&b);
+6
+    int n;
+7
+    scanf("%d",&n);
+8
+    int c=60*a+b;
+9
+    int min=10000;
+10
+    int a1,a2,a3,a4;
+11
+    int output=0;
+12
+    int j,out,d;
+13
+    for(int i=0;i<n;i++){
+14
+        
+15
+        
+16
+        scanf("%d %d:%d %d",&a1,&a2,&a3,&a4);
+17
+        out=1;
+18
+        d=a2*60+a3;
+19
+        if(d>=c){
+20
+            j=d+a4;
+21
+            if(j<=min){
+22
+                min=j;
+23
+                output=a1;
+24
+            }
+25
+        }
+26
+​
+27
+        
+28
+​
+29
+    }
+30
+    printf("%d",output);
+31
+    return 0;
+32
+}
