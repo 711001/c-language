@@ -1,0 +1,118 @@
+Rotate Image
+medium
+Pass rate: 98.06% (152/155)
+Loop
+Array
+Format I/O
+Description
+In computer, everything is represented by numbers — so does image. Computer stores image as a matrix. A cell in the matrix is a pixel in the image, and number in the cell represents the color of that pixel.
+
+If we want to rotate an image, it means that we want to rotate the matrix itself. For example, consider an image as follows:
+
+| 1 2 3 |
+| 4 5 6 |
+| 7 8 9 |
+
+If we want to rotate this image 90 degrees to the right, we can rotate the matrix like this:
+
+| 7 4 1 |
+| 8 5 2 |
+| 9 6 3 |
+
+Now given the degree of right rotation, can you help me rotate my images?
+
+在電腦裡，所有東西都是用數字來表達的——就連圖片也不例外。電腦以矩陣的形式來儲存每一張圖片，矩陣裡的格子代表著圖片的像素，而格子裡的數字就代表了該像素的顏色。
+
+當我們要對圖片做旋轉時，我們實際上就是在旋轉這個矩陣本身。舉例來說，如果有一張圖片長這樣：
+
+| 1 2 3 |
+| 4 5 6 |
+| 7 8 9 |
+
+如果我們想將這張圖片向右旋轉 90 度，那麼就等於是把矩陣旋轉成這樣：
+
+| 7 4 1 |
+| 8 5 2 |
+| 9 6 3 |
+
+給定向右旋轉的角度，你能將圖片做正確的旋轉嗎？
+
+Input
+The input consists of 3 part.
+
+The first line is an integer, indicates the degree of right rotation. It will be one of the following numbers: 90, 180 or 270.
+
+The second line contains 2 integers m & n, indicates the dimension of the image. And 3 <= m, n <= 100.
+
+The following m lines contain n integers, representing the image itself. Each integer in the image is in the range of [0, 100].
+
+Output
+The rotated image.
+
+Each number must follow by a space.
+
+You need to print newline at the end of last line.
+
+Limits
+Your program needs to finish task in 5 seconds.
+
+Your program can only use memory less than 65536 KB.
+
+#include <stdio.h>
+
+int main(void){
+    return 0;
+}
+
+45
+        }
+46
+        
+47
+    }
+48
+    
+49
+    int bsd[j][i];
+50
+    
+51
+    for(int k=0; k<rowSize; k++)
+52
+    {
+53
+        for(int m=0; m<colSize; m++)
+54
+            bsd[m][rowSize-k-1] = asd[k][m];
+55
+    }
+56
+    if(a==270){
+57
+        for(int d=0; d<colSize; d++)
+58
+        {
+59
+            for(int g=0; g<rowSize; g++)
+60
+                printf("%d ", bsd[d][g]);
+61
+            printf("\n");
+62
+        }
+63
+        
+64
+    }
+65
+        
+66
+    
+67
+    
+68
+    
+69
+    return 0;
+70
+}
