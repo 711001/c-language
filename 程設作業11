@@ -1,0 +1,83 @@
+Split the number
+easy
+Pass rate: 99.09% (325/328)
+Assignments
+Format I/O
+If/else
+Description
+Read an integer x, and output its digits split by space.
+
+Note: 0 <= x <= 999
+Input
+Single integer
+
+Output
+Three digits split by spaces.
+
+If the number of digits is less than three, pad the output with zeros to make it three digits.
+
+Limits
+Your program needs to finish task in 10 seconds.
+
+Your program can only use memory less than 10000 KB.
+
+#include <stdio.h>
+
+int main(void){
+    return 0;
+}
+
+1
+#include <stdio.h>
+2
+​
+3
+int main(void){
+4
+    int x,a,b,c;
+5
+    scanf("%d",&x);
+6
+    if (x>=100&&x<=999){
+7
+        a=x/100;
+8
+        printf("%1d ",a);
+9
+        b=(x-100*a)/10;
+10
+        printf("%1d ",b);
+11
+        c=x%10;
+12
+        printf("%1d ",c);}
+13
+    else if (10<= x<=99){
+14
+        printf("0 ");
+15
+        a=x/10;
+16
+        printf("%1d ",a);
+17
+        b=x%10;
+18
+        printf("%1d ",b);
+19
+    }
+20
+    else{
+21
+        printf("0 0 ");
+22
+        printf("%1d",x);
+23
+    }
+24
+        
+25
+    
+26
+    return 0;
+27
+}
