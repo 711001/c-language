@@ -1,0 +1,45 @@
+Polynomial Calculation
+easy
+Pass rate: 99.7% (331/332)
+Format I/O
+Expression
+Description
+Read a floating-point number for x and calculate the value of the following polynomial:
+
+𝟕𝐱⁴ - 𝟖𝐱³ - 𝐱² + 𝟔𝐱 - 𝟐𝟐
+
+Input
+A floating-point number to read for x.
+
+Output
+The result should be displayed with one digit after the decimal point.
+
+Limits
+Your program needs to finish task in 5 seconds.
+
+Your program can only use memory less than 65536 KB.
+
+#include <stdio.h>
+
+int main(void){
+    return 0;
+}
+
+1
+#include <stdio.h>
+2
+#include <math.h>
+3
+int main(void){
+4
+    double x,y;
+5
+    scanf("%lf",&x);
+6
+    y=(7.0*pow(x,4)-8.0*pow(x,3)-pow(x,2)+6.0*x-22.0);
+7
+    printf("%.1lf",y);
+8
+    return 0;
+9
+}
