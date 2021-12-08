@@ -1,0 +1,81 @@
+EAN-13
+medium
+Pass rate: 99.7% (328/329)
+Expression
+Description
+In Taiwan, manufacturers of goods put a barcode on each product. This code identifies both the manufacturer and the product. Among a variety of different formats of the barcodes, one of these is known as EAN-13, which represents a thirteen-digit number. For example: 4 710367 663270.
+
+The EAN-13 is composed of the following four components:
+
+GS1 prefix: The first three digits usually identify the GS1 Member Organization which the manufacturer has joined.
+
+Manufacturer code: This is a unique code (variable-length) assigned to each manufacturer by the numbering authority indicated by the GS1 Prefix.
+
+Product code: The product code, which immediately follows manufacturer code, is assigned by the manufacturer.
+
+Check digit: This is an additional digit, used to verify that a barcode has been scanned correctly.
+
+To calculate the check digit, follow the three steps below:
+
+Numbering the positions from the right (exclude check digit), the odd positions in the twelve-digit number are weight of 3 and the even positions are weight of 1. Multiply each data digit with its corresponding weight.
+
+For example:
+
+data: 4 7 1 0 3 6 7 6 6 3 2 7
+
+weight: 1 3 1 3 1 3 1 3 1 3 1 3
+
+Calculate the sum of the results from step 1.
+
+Subtract the sum from the nearest multiple of 10 that is equal to or higher than the sum (see hint). The result is the check digit.
+
+Write a program that calculate the check digit.
+
+Reference: https://en.wikipedia.org/wiki/International_Article_Number
+
+Input
+Three integers (1 digit, 6 digits and 5 digits) which form the first twelve-digit number of the EAN-13.
+
+Output
+Output the check digit that your program calculate.
+
+Limits
+Your program needs to finish task in 5 seconds.
+
+Your program can only use memory less than 10000 KB.
+
+Hint
+#include <stdio.h>
+
+int main(void){
+    return 0;
+}
+
+1
+#include <stdio.h>
+2
+​
+3
+int main(void){
+4
+    int a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12;
+5
+    scanf("%1d%1d%1d%1d%1d%1d%1d%1d%1d%1d%1d%1d",&a1,&a2,&a3,&a4,&a5,&a6,&a7,&a8,&a9,&a10,&a11,&a12);
+6
+    
+7
+​
+8
+    int sum=0;
+9
+    sum+=(a1+a3+a7+a5+a9+a11);
+10
+    sum+=3*(a2+a4+a6+a8+a10+a12);
+11
+    int m=((sum - 1) / 10 * 10 + 10 );
+12
+    printf("%d",m-sum);
+13
+    return 0;
+14
+}
