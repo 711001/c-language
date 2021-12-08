@@ -1,0 +1,131 @@
+Secret Value
+medium
+Pass rate: 93.1% (243/261)
+Function
+Description
+2021/11/05 Updated Description! (Incorrect, Removed)
+
+2021/11/09 Added information about calculating GCD(a, 0).
+
+David is trying to calculate the "secret value" of numbers.
+The secret value of integer N is calculated as:
+
+If N is a one-digit integer, the secret value is itself.
+
+Split the number into upper part and lower part.
+If there are an odd number of digits, the middle digit belongs to the lower part.
+
+The integer 121088 gets divided into 121 and 088.
+
+The integer 12345 gets divided into 12 and 345
+
+Find the two parts' greatest common divisor(GCD). The result is called k.
+
+Please keep in mind that GCD(a, 0) = GCD(0, a) = |a|.
+
+The result of GCD(a,b) is the greatest non-negative integer k satisfices that a = ck, b = dk. Read This to know more.
+
+Sum up N itself and the secret value of k.
+
+David hate huge numbers, so you MUST answer in modular 10007.
+Your work will be judged by running the loader section, so please implement the functions provided!
+
+Example (Sample Input 1)
+For N = 2424, we can split it into 24 and 24, whose GCD is also 24, so the result k of 2424 is 24.
+Now we need to know the secret number of 24 to sum up with N.
+
+For N= 24, we can split it into 2 and 4, whose GCD is 2, so the result k of 24 is 2.
+
+Since 2 has only one digit, the secret value of 2 is 2
+
+Hence, we can get the secret value of 2424 = 2424 + secret value of 24 = 2424 + 24 + secret value of 2 = 2450
+
+Input
+A single integer N
+
+1 ≦ N ≦ 2,147,483,647
+
+Output
+The secret value of N, mod 10007
+
+Limits
+Your program needs to finish task in 1 second.
+
+Your program can only use memory less than 5000 KB.
+
+Loader Code
+Your code will be judge using this program:
+
+#include <stdio.h>
+#define MODULUS 10007
+int getSecret(int n);
+int gcd(int a, int b);
+
+int main(){
+	int n;
+	scanf("%d", &n);
+	printf("%d", getSecret(n));
+	return 0;
+}
+int getSecret(int n)
+{
+
+}
+
+int gcd(int a, int b)
+{
+
+}
+
+61
+        }
+62
+        else{
+63
+            g=0;
+64
+        }
+65
+        g=gcd(a,b);
+66
+        
+67
+        
+68
+        sum+=g;                     
+69
+    }
+70
+    //printf("%d",sum);
+71
+    
+72
+    return sum%MODULUS;                 
+73
+}
+74
+​
+75
+int gcd(int a, int b)
+76
+{
+77
+    int temp;
+78
+    
+79
+    while(a%b!=0){
+80
+            temp=a%b;
+81
+            a=b;
+82
+            b=temp;
+83
+    }
+84
+    return b;
+85
+    
+86
+}
