@@ -1,0 +1,40 @@
+Make a Circle
+easy
+Pass rate: 100% (339/339)
+Format I/O
+Description
+Suppose you are in an art class now. The teacher wants you to make a circle, made up of cloth, with string glued on the edge. Given the radius of the circle, you should calculate the area of the cloth and the length of the string that you need in order to make this circle.
+
+You should use macro to define PI as 3.14f.
+
+Input
+The radius of the circle. It is an integer x where 1 <= x <= 100.
+
+Output
+Two floating-point numbers (round to nearest 100th) separated by a space. The first one represents the area of the cloth, and the second one represents the length of the string.
+
+Limits
+Your program needs to finish task in 3 seconds.
+
+Your program can only use memory less than 6000 KB.
+
+1
+#include <stdio.h>
+2
+​
+3
+int main(void){
+4
+    #define PI  3.14f
+5
+    float x;
+6
+    scanf("%f",&x);
+7
+    printf("%.2f %.2f",x*x*PI,2*x*PI);
+8
+    return 0;
+9
+}
+10
+​
