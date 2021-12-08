@@ -1,0 +1,144 @@
+國中教育會考成績 CAP grade
+hard
+Pass rate: 98.71% (307/311)
+Assignments
+Format I/O
+If/else
+Description
+The Comprehensive Assessment Program for Junior High School Students(CAP), is one of the current Senior high-school entrance program in Taiwan. The exam regulations and grading rules are as following:
+
+The CAP consists of 5 subjects: Chinese, English, Mathematics, Social Studies, and Science.
+
+Base on the result of each subject, each are divided into "Excellent" (Grade A), "Fair" (Grade B), and "Improvement Needed" (Grade C) three ranks. Within grade A and B, each will be further divided into three smaller levels "A++/B++", "A+/B+", and "A/B".
+
+Each rank corresponds to different amount of score, and each level corresponds to a different amount of point. Both are summed up to get the total score / total points. The score / point translation table is as following:
+
+
+
+The subjects Chinese, Social Study and Science are graded by the number of correct answers. The subjects Mathematics and English, are graded by the weighting system. The translation table is as following:
+
+
+
+The final result can be represented as "score/points(ranks)".
+
+Example: Steven's grade of each subject is: CH=43, EN=92.5, MA=79.8, SO=61, SC=41. We can know the rank of each subjects is: CH=A+, EN=A, MA=B++, SO=A++, SC=B++. So the total score is 6 + 6 + 4 + 6 + 4 = 26, and the total points 6 + 5 + 4 + 7 + 4 = 26. The final CAP grading result is 26/26(3A2B).
+
+Given a student's grade of each subject, please calculate the final CAP grading result.
+
+國中教育會考，是台灣現行的高中入學管道之一。會考的考試規則與成績計算方式如下：
+
+考科總共有國文、英文、數學、自然、社會五科。
+
+每一考科的成績依高低被區分為精熟 (A)、基礎 (B)、待加強 (C) 三個等級，而其中精熟與基礎又可再分別細分為「A++ / B++」、「A+ / B+」、「A / B」三個分級。
+
+不同的等級會對應到不同積分，不同分級對應到不同積點。將各科等級加總會得到總積分，各科分級加總得到總積點。其換算表如下表所示：
+
+
+
+國文、社會、自然三科以答對題數進行評分；數學、英文因為分別有手寫、聽力部份，另以加權分數進行評分。108 學年度的各科量尺分數換算表如下表所示：
+
+
+
+學生成績可以被表示為「積分/積點（等級）」。
+
+例：小明的五科分數分別為：國 43、英 92.5、數 79.8、社 61、自 41，則可以得知其各科分級為：國 A+、英 A、數 B++、社 A++、自 B++，總積分為 6 + 6 + 4 + 6 + 4 = 26，總積點為 6 + 5 + 4 + 7 + 4 = 26，其會考成績可表示為26/26(3A2B)。
+
+給定某生的各科分數，請你幫忙計算該生的會考成績。
+
+Input
+Five number CH, EN, MA, SO, SC, which represent the original grade of Chinese, English, Mathematics, Social studies and Science, respectively.
+
+The data type of CH, SO, SC is integer.
+
+The data type of EN, MA is float.
+
+Output
+The final grade of this student, in the format `score/points(ranks)`.
+
+Please refer to description above.
+
+Limits
+Your program needs to finish task in 3 seconds.
+
+Your program can only use memory less than 8192 KB.
+
+#include<stdio.h>
+
+int main () {
+    return 0;
+}
+
+138
+            sum1+=6;
+139
+        }
+140
+        else {
+141
+            sum1+=5;
+142
+        }
+143
+    }
+144
+    if (SC>=20&&SC<=45){
+145
+        B+=1;
+146
+        if (SC>=38){
+147
+            sum1+=4;
+148
+        }
+149
+        else if (SC>=31&&SC<=37){
+150
+            sum1+=3;
+151
+        }
+152
+        else {
+153
+            sum1+=2;
+154
+        }
+155
+    }
+156
+    if(SC<=19){
+157
+        C+=1;
+158
+        sum1+=1;
+159
+    }
+160
+    sum2=A*6+B*4+C*2;
+161
+    printf("%d/%d(",sum2,sum1);
+162
+    if (A!=0){
+163
+        printf("%dA",A);
+164
+    }
+165
+    if (B!=0){
+166
+        printf("%dB",B);
+167
+    }
+168
+    if (C!=0){
+169
+        printf("%dC",C);
+170
+    }
+171
+    printf(")");
+172
+​
+173
+        return 0;
+174
+}
