@@ -1,0 +1,91 @@
+sister's noise
+medium
+Pass rate: 98.96% (286/289)
+Loop
+Array
+Description
+"sister`s noise　捜し続ける"
+
+Misaka has many sisters (totally 20000 of them), they take turns going abroad, others who stay live in 10 houses on the same street.
+
+They always chat with each other, but neighbors often complain about their noise
+
+You can calculate the noise level made by M sisters in house A and N sisters in house B with this formula:
+
+Noise(A, B) = (M + N) x |A - B|
+
+Now you know how many of them in each house, please calculate max noise level they can made.
+
+御坂有很多妹妹們（總共有2萬個），她們常輪流出國，剩下的則住在同一條街上相鄰的10戶
+
+她們很喜歡互相聊天交換情報，但人多嘴雜常常被鄰居抱怨太吵
+
+住在第A戶的M個妹妹與第B戶的N個妹妹們互相聊天製造的噪音音量計算方式如下：
+
+Noise(A, B) = (M + N) x |A - B|
+
+現在你知道這10戶分別住了多少人
+
+請你找出這些妹妹們會製造出的最大噪音音量
+
+https://youtu.be/1Nv-vPBA0fI
+
+P.S. 鄰居最後使用向量反射裝置反射音波，解決了噪音問題
+
+Input
+One line contains 10 integers (S1 - S10), separated by spaces
+
+1 <= S1, S2, ... , S10 <= 20000
+
+Output
+One integer (the maximum noise)
+
+Limits
+Your program needs to finish task in 1 second.
+
+Your program can only use memory less than 65536 KB.
+
+#include <stdio.h>
+
+int main(void){
+    return 0;
+}
+
+1
+#include <stdio.h>
+2
+​
+3
+int main(void){
+4
+    int a[10],max=0,k,j;
+5
+    for(int i=0;i<=9;i++){
+6
+        scanf("%d",&a[i]);
+7
+    }
+8
+    for(k=0;k<=8;k++){
+9
+        for(j=k+1;j<=9;j++){
+10
+            if((j-k)*(a[k]+a[j])>max){
+11
+                max=(j-k)*(a[k]+a[j]);
+12
+            }
+13
+​
+14
+​
+15
+        }
+16
+    }
+17
+    printf("%d",max);
+18
+    return 0;
+19
+}
