@@ -1,0 +1,59 @@
+Addition in Column Form
+easy
+Pass rate: 99.7% (333/334)
+Format I/O
+Expression
+Description
+Your cousin is a second grade elementary school student. He learned the addition that written in column form in his today's class. However, he still has lots of questions about it. Your task is to write a small program to demonstrate the answer to the addition of xand ywritten in column form.
+
+Input
+Given 2 integers split by a space.
+
+0 <= x, y <= 9999
+
+Output
+The column form will be performed in 4 lines.
+
+First line will start in 2 space and augend(被加數) padding with zeros until 4 digits.
+
+Second line will start in "+)" and addend (加數) padding with zeros until 4 digits.
+
+Third line is "------".
+
+Last line is the result padding with zeros until 6 digits.
+
+Limits
+Your program needs to finish task in 5 seconds.
+
+Your program can only use memory less than 65535 KB.
+
+#include <stdio.h>
+
+int main(void){
+    return 0;
+}
+
+1
+#include <stdio.h>
+2
+​
+3
+int main(void){
+4
+    int x,y,z;
+5
+    scanf("%d%d",&x,&y);
+6
+    z=x+y;
+7
+    printf("  %.4d\n",x);
+8
+    printf("+)%.4d\n",y);
+9
+    printf("------\n");
+10
+    printf("%.6d",z);
+11
+    return 0;
+12
+}
