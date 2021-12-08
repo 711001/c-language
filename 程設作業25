@@ -1,0 +1,71 @@
+Beer Can Wall
+medium
+Pass rate: 98.26% (283/288)
+If/else
+Loop
+Basic Types
+Array
+Description
+Aqua loves beer. She wants to stack a wall using beer cans. The wall will be only 20cm tall. Assume that the size of each beer can is 20cm by 10cm, and she can put it horizontally or vertically. Given the width of the wall W(always multiples of 10cm), please help her calculate the combinations of the placement.
+
+For example:
+
+There is 1 combination for 10cm width wall.
+
+
+
+There are 2 combinations for 20cm width wall.
+
+
+
+There are 3 combinations for 30cm width wall.
+
+
+
+Input
+An integer W, where 0 <= W <= 500 and w % 10 == 0.
+
+Output
+The number of combinations.
+
+Limits
+Your program needs to finish task in 1 second.
+
+Your program can only use memory less than 10000 KB.
+
+#include <stdio.h>
+
+int main () {
+    return 0;
+}
+
+1
+#include <stdio.h>
+2
+int main () {
+3
+    int n;
+4
+    scanf("%d",&n);
+5
+    n/=10;
+6
+    long long int a[n+100];
+7
+    
+8
+    a[1]=1;
+9
+    a[2]=2;
+10
+    for(int j=3;j<=n;j++) {
+11
+        a[j]=a[j-1]+a[j-2];
+12
+    }
+13
+    printf("%lld",a[n]);
+14
+    return 0;
+15
+}
