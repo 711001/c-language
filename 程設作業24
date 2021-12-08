@@ -1,0 +1,93 @@
+Pokémon Go III - Team Rocket
+easy
+Pass rate: 97.94% (285/291)
+Array
+If/else
+Basic Types
+Loop
+Description
+火箭隊想要搶走小智的皮卡丘! 他們總共有 26 種搶走皮卡丘的計畫，為 A ~ Z 計畫，他們把計畫放進不同編號的箱子中，但卻忘了做紀錄，現在火箭隊完全不知道計畫被放進那些箱子中，只好翻箱到櫃，他們總共找了 n 個箱子，每個箱子都擁有一個編號 x, 箱子內會有一個計畫 y, 請列出火箭隊找到的計畫被放進哪些箱子中，以及沒有找到的計畫有哪些。
+
+ps. 計畫編號有可能不是 A ~ Z
+
+Input
+Integer n represents the number of boxes.
+
+Then, there are n lines.
+
+In each line, an integer x(1<=x<=10^9) and a character y(could be any ASCII character) represent the box's number and the plan's name respectively.
+
+Output
+From plan A to Z, output the plan is found or not.
+
+For example, output "Plan A is in box 12." if the plan A is found in box 12. Otherwise, output "Not found plan B." if the plan B is not found.
+
+Limits
+Your program needs to finish task in 1 second.
+
+Your program can only use memory less than 5000 KB.
+
+#include<stdio.h>
+
+int main () {
+    return 0;
+}
+
+1
+#include<stdio.h>
+2
+​
+3
+int main () {
+4
+    char x[26]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+5
+    int n,y;
+6
+    scanf("%d",&n);
+7
+    int a[n];
+8
+    char b[n];
+9
+    for (int j=0;j<n;j++){
+10
+        scanf("%d",&a[j]);
+11
+        scanf("%s",&b[j]);
+12
+    }
+13
+    for (int z=0;z<26;z++){
+14
+        for ( y=0;y<n;y++){
+15
+            if (x[z]==b[y]){
+16
+                printf("Plan %c is in box %d.\n",b[y],a[y]);
+17
+                break;
+18
+            }
+19
+            
+20
+        }
+21
+        if(y==n){
+22
+            printf("Not found plan %c.\n",x[z]);
+23
+        }
+24
+    }
+25
+        
+26
+        
+27
+    
+28
+    return 0;
+29
+}
