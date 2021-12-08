@@ -1,0 +1,100 @@
+俗俗的賣大拍賣 Discount Price Tag Printing
+medium
+Pass rate: 99.4% (329/331)
+Format I/O
+Description
+2021/10/21 21:50 更新 / Update:
+
+新增提示，請至下方 Hint 查看
+
+Added hint below
+
+資訊系阿超正在協助可憐的銷售員設計即將到來的周年慶看板。
+
+但是因為人工處理起來真的太費時了，
+
+請幫她設計一個程式可以自動化的處理完這件任務吧!
+
+別擔心，阿超知道要如何將輸出結果從螢幕終端顯示器中帶到現實的!
+
+A-chao, from CSIE, is helping a poor supermarket salesperson designing the price tag for the upcoming anniversary event. However, there is way too much to do it by hand. Please help him design a program to print out the price tag format. Don't worry, he knows how to make things in the terminal become physical.
+
+The following are the rules for each output lines:
+
+Line #0 / #4: Filly Packed with the character "
+
+Line #1: Start with a backslash \, four spaces, the discount percentage which takes 3 character lengths, the string %off!, four more spaces, then ends with another backslash.
+
+Line #2: Start with a backslash \, one space, the string Before , two more spaces, a dollar sign $, the original cost without a decimal point using a field width of five characters (justified to the right), and ends with another space and a backslash.
+
+Line #3: Start with a backslash \, one space, the string After, three more spaces, a dollar sign $, the discounted cost till the second decimal place using a field width of five characters (justified to the right), and ends with another space and a backslash.
+
+No leading zero should be added to any of the printed numbers.
+
+You can checkout the testing cases for full examples.
+
+Input
+Two integers a, b separated by a space.
+
+a represents "discount percentage".
+
+b represents "original cost".
+
+0 <= a <= 100
+
+1 <= b <= 99
+
+Output
+Consists of 5 lines, forming a 18*5 rectangle.
+
+Please refer to the description section for details of each line.
+
+Limits
+Your program needs to finish task in 1 second.
+
+Your program can only use memory less than 5000 KB.
+
+Hint
+#include<stdio.h>
+
+int main () {
+
+    return 0;
+}
+
+1
+#include<stdio.h>
+2
+​
+3
+int main () {
+4
+    int a,b;
+5
+    float c;
+6
+    scanf("%d%d",&a,&b);
+7
+    c=b-(0.01*a*b);
+8
+    printf("\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\n");
+9
+    printf("\\    %3d%%off!    \\\n",a);
+10
+    printf("\\ Before  $%5d \\\n",b);
+11
+    printf("\\ After   $%5.2f \\\n",c);
+12
+     printf("\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\n");
+13
+    
+14
+   
+15
+    
+16
+​
+17
+    return 0;
+18
+}
