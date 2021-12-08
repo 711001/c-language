@@ -1,0 +1,110 @@
+Caesar Cipher Encoder
+medium
+Pass rate: 97.02% (293/302)
+Basic Types
+Loop
+If/else
+Description
+The Caesar cipher (a cipher is a method of encrypting data) is one of the simplest and most widely known encryption techniques. For English text, the Caesar cipher would work by taking each letter in the plaintext message and substituting the letter that is k letters latter (allowing wraparound; that is, having the letter z followed by the letter a) in the alphabet.
+
+For example, if k = 3, then the letter a in plaintext becomes d in ciphertext, B in plaintext becomes E in ciphertext, and the plaintext message "bob, i love you. Alice" becomes "ere, l oryh brx. Dolfh" in ciphertext. Note that k may be negative. It means that you should substitute the letter in the plaintext message that is |k| letters earlier.
+
+Write a program that prints out the Caesar cipher for the given input (described in Input Format).
+
+Note: Transform only English alphabet (case-preserving) and preserve other characters such as Arabic numerals or punctuation.
+
+Input
+The input contains two lines. Both lines are followed by a newline character. The first line contains an integer for k (-10000 <= k <= 10000), and the second line is a plaintext message.
+
+Output
+Output the ciphertext of the plaintext message in the input using the Caesar cipher. There is no newline character at the end of the output.
+
+Limits
+Your program needs to finish task in 2 seconds.
+
+Your program can only use memory less than 10000 KB.
+
+#include <stdio.h>
+
+int main(void){
+    return 0;
+}
+
+1
+#include <stdio.h>
+2
+int main()
+3
+{
+4
+    char ch;
+5
+    int k;
+6
+    scanf("%d",&k);
+7
+    getchar();
+8
+    
+9
+    k=(k+26*400)%26;
+10
+​
+11
+​
+12
+    while ((ch=getchar())!='\n')
+13
+    {
+14
+        if (ch>=65 && ch<=90)
+15
+        {
+16
+            ch+=k;
+17
+​
+18
+            if (ch>=91){
+19
+                    ch-=26;
+20
+            }
+21
+            putchar(ch);
+22
+        }
+23
+        else if (ch>=97 && ch<=122)
+24
+        {
+25
+            for (int i=1;i<=k;i++)
+26
+            {
+27
+                ch++;
+28
+​
+29
+                if (ch==123)
+30
+                    ch=97;
+31
+            }
+32
+            putchar(ch);
+33
+        }
+34
+        else{
+35
+            putchar(ch);
+36
+        }
+37
+    }
+38
+    return 0;
+39
+}
